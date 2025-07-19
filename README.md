@@ -1,64 +1,83 @@
-# HRA DEV - Site Web
+# HRA DEV - Site Web Professionnel
 
-Site web moderne et responsive pour HRA DEV, une agence de développement web et mobile.
+Site web moderne pour HRA DEV, une entreprise de développement web et mobile.
 
 ## Technologies utilisées
 
-- React
-- TypeScript
-- Tailwind CSS
-- Framer Motion (animations)
-- Hero Icons
+- React avec TypeScript
+- Vite comme bundler
+- Tailwind CSS pour le styling
+- Framer Motion pour les animations
 
 ## Fonctionnalités
 
-- Design responsive (mobile, tablette, desktop)
-- Navigation fluide avec défilement et ancrage
-- Animations à l'entrée des sections
-- Formulaire de contact fonctionnel
-- Interface moderne avec la couleur principale violet (#6C2BD9)
+- Design responsive et moderne
+- Animations fluides
+- Sections : Accueil, À propos, Services, Portfolio, Contact
+- Formulaire de contact
+- Profil du fondateur
 
-## Structure du site
-
-- **Hero / Accueil** - Présentation de l'entreprise avec slogan
-- **À propos** - Description de l'équipe et des valeurs
-- **Services** - Liste des services proposés avec icônes
-- **Portfolio** - Présentation des projets réalisés
-- **Contact** - Formulaire de contact et coordonnées
-
-## Installation et démarrage
+## Installation locale
 
 ```bash
-# Installation des dépendances
+# Cloner le repository
+git clone <votre-repo-url>
+
+# Accéder au dossier du projet
+cd hra-dev-website
+
+# Installer les dépendances
 npm install
 
-# Démarrage du serveur de développement
+# Lancer le serveur de développement
 npm run dev
-
-# Construction pour la production
-npm run build
 ```
 
-## Déploiement
+## Déploiement sur Netlify
 
-Ce site est prêt à être déployé sur Vercel ou Netlify.
+### Option 1 : Déploiement automatique depuis GitHub
 
-### Déploiement sur Vercel
+1. Connectez-vous à votre compte [Netlify](https://www.netlify.com/)
+2. Cliquez sur "New site from Git"
+3. Sélectionnez GitHub comme fournisseur Git
+4. Autorisez Netlify à accéder à vos repositories
+5. Sélectionnez le repository de ce projet
+6. Configurez les options de build:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+7. Cliquez sur "Deploy site"
 
-```bash
-npm install -g vercel
-vercel
-```
+### Option 2 : Déploiement manuel
 
-### Déploiement sur Netlify
+1. Construisez le projet localement:
+   ```bash
+   npm run build
+   ```
+2. Déployez le dossier `dist` sur Netlify:
+   - Connectez-vous à votre compte Netlify
+   - Glissez-déposez le dossier `dist` dans la zone de dépôt de Netlify
 
-```bash
-npm install -g netlify-cli
-netlify deploy
-```
+### Configuration
+
+Le fichier `netlify.toml` est déjà configuré avec les paramètres nécessaires:
+- Commande de build: `npm run build`
+- Dossier de publication: `dist`
+- Redirection pour le routage SPA
+- Versions de Node.js et npm recommandées
+
+## Variables d'environnement
+
+Si vous avez besoin de variables d'environnement pour votre projet, créez un fichier `.env` à la racine du projet et ajoutez-les dans les paramètres de votre site Netlify dans la section "Site settings > Build & deploy > Environment".
 
 ## Personnalisation
 
-- Couleur principale : modifiez la valeur `primary` dans `tailwind.config.js`
-- Contenu : modifiez les textes dans les composants respectifs
-- Images : remplacez ou ajoutez des images dans le dossier `public` 
+Pour personnaliser le site:
+- Modifiez les composants React dans le dossier `src/components/`
+- Ajustez les styles dans `src/index.css`
+- Modifiez les couleurs dans `tailwind.config.js`
+
+## Contact
+
+Pour toute question ou assistance, contactez:
+- Email: hra.deve@gmail.com
+- Téléphone: +216 29 833 609 
