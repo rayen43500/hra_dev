@@ -1,0 +1,43 @@
+<svg width="600" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient définitions -->
+  <defs>
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8A00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF5F00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6C2BD9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A148C;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Hexagone orange avec effet 3D -->
+  <path d="M18 157L80 50L160 50L222 157L160 264L80 264L18 157Z" fill="url(#orangeGradient)" filter="url(#glow)" />
+  
+  <!-- Hexagone violet foncé avec effet 3D -->
+  <path d="M80 50L160 50L222 157L160 264L80 264L142 157L80 50Z" fill="url(#purpleGradient)" filter="url(#glow)" />
+  
+  <!-- Texte HRA avec effet brillant -->
+  <g filter="url(#glow)">
+    <path d="M330 90H360V130H410V90H440V200H410V160H360V200H330V90Z" fill="url(#orangeGradient)" />
+    <path d="M450 90H480V150C480 160 485 165 495 165H505C515 165 520 160 520 150V90H550V150C550 175 535 190 505 190H495C465 190 450 175 450 150V90Z" fill="url(#orangeGradient)" />
+    <path d="M560 90H590L640 160V90H670V200H640L590 130V200H560V90Z" fill="url(#orangeGradient)" />
+  </g>
+  
+  <!-- Texte DEV avec effet brillant -->
+  <g filter="url(#glow)">
+    <path d="M330 220H360V280C360 290 365 295 375 295H385C395 295 400 290 400 280V220H430V280C430 305 415 320 385 320H375C345 320 330 305 330 280V220Z" fill="url(#purpleGradient)" />
+    <path d="M440 220H470L520 290V220H550V330H520L470 260V330H440V220Z" fill="url(#purpleGradient)" />
+    <path d="M560 250H520V220H630V250H590V330H560V250Z" fill="url(#purpleGradient)" />
+  </g>
+  
+  <!-- Tagline avec style moderne -->
+  <text x="330" y="380" font-family="Arial, sans-serif" font-size="28" font-weight="300" fill="#333" letter-spacing="1">From concept to product</text>
+  
+  <!-- Effet de brillance sur le logo -->
+  <circle cx="80" cy="80" r="15" fill="white" opacity="0.3" />
+</svg> 
