@@ -8,17 +8,17 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#6C2BD9',
-          50: '#F3EEFF',
-          100: '#E4D9FF',
-          200: '#C7B3FF',
-          300: '#A98DFF',
-          400: '#8B66FF',
-          500: '#6C2BD9', // Couleur principale
-          600: '#5A24B5',
-          700: '#4A148C',
-          800: '#3A1078',
-          900: '#2A0C64',
+          DEFAULT: '#0056B3',
+          50: '#E6F0FF',
+          100: '#CCE0FF',
+          200: '#99C2FF',
+          300: '#66A3FF',
+          400: '#3385FF',
+          500: '#0056B3', // Couleur principale - bleu professionnel
+          600: '#0049A6',
+          700: '#003C8A',
+          800: '#002F6D',
+          900: '#002251',
         },
         secondary: {
           DEFAULT: '#FF8A00',
@@ -27,7 +27,7 @@ export default {
           200: '#FFD280',
           300: '#FFB84D',
           400: '#FFA01A',
-          500: '#FF8A00', // Couleur secondaire
+          500: '#FF8A00', // Couleur secondaire - orange
           600: '#E67A00',
           700: '#CC6D00',
           800: '#B35F00',
@@ -51,7 +51,7 @@ export default {
         sans: ['Inter', 'sans-serif'],
       },
       boxShadow: {
-        'glow': '0 0 15px rgba(108, 43, 217, 0.5)',
+        'glow': '0 0 15px rgba(0, 86, 179, 0.5)',
         'glow-orange': '0 0 15px rgba(255, 138, 0, 0.5)',
       },
       animation: {

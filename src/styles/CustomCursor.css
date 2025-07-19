@@ -1,0 +1,43 @@
+.custom-cursor-container {
+  pointer-events: none;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+/* Restaurer le curseur par défaut sur les appareils mobiles */
+.mobile-device .custom-cursor,
+.mobile-device .custom-cursor-ring {
+  display: none;
+} 

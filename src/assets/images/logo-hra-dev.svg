@@ -5,9 +5,9 @@
       <stop offset="0%" style="stop-color:#FF8A00;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#FF5F00;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6C2BD9;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4A148C;stop-opacity:1" />
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0056B3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003C8A;stop-opacity:1" />
     </linearGradient>
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="4" result="blur" />
@@ -18,8 +18,8 @@
   <!-- Hexagone orange avec effet 3D -->
   <path d="M18 157L80 50L160 50L222 157L160 264L80 264L18 157Z" fill="url(#orangeGradient)" filter="url(#glow)" />
   
-  <!-- Hexagone violet foncé avec effet 3D -->
-  <path d="M80 50L160 50L222 157L160 264L80 264L142 157L80 50Z" fill="url(#purpleGradient)" filter="url(#glow)" />
+  <!-- Hexagone bleu avec effet 3D -->
+  <path d="M80 50L160 50L222 157L160 264L80 264L142 157L80 50Z" fill="url(#blueGradient)" filter="url(#glow)" />
   
   <!-- Texte HRA avec effet brillant -->
   <g filter="url(#glow)">
@@ -30,9 +30,9 @@
   
   <!-- Texte DEV avec effet brillant -->
   <g filter="url(#glow)">
-    <path d="M330 220H360V280C360 290 365 295 375 295H385C395 295 400 290 400 280V220H430V280C430 305 415 320 385 320H375C345 320 330 305 330 280V220Z" fill="url(#purpleGradient)" />
-    <path d="M440 220H470L520 290V220H550V330H520L470 260V330H440V220Z" fill="url(#purpleGradient)" />
-    <path d="M560 250H520V220H630V250H590V330H560V250Z" fill="url(#purpleGradient)" />
+    <path d="M330 220H360V280C360 290 365 295 375 295H385C395 295 400 290 400 280V220H430V280C430 305 415 320 385 320H375C345 320 330 305 330 280V220Z" fill="url(#blueGradient)" />
+    <path d="M440 220H470L520 290V220H550V330H520L470 260V330H440V220Z" fill="url(#blueGradient)" />
+    <path d="M560 250H520V220H630V250H590V330H560V250Z" fill="url(#blueGradient)" />
   </g>
   
   <!-- Tagline avec style moderne -->

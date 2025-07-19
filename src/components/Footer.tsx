@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import logoHraDev from '../assets/images/logo.png'
+import founderPlaceholder from '../assets/images/founder-placeholder.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -44,13 +45,98 @@ const Footer = () => {
 
   return (
     <motion.footer 
-      className="py-16 text-white bg-gradient-to-br from-primary-700 to-primary-900 shadow-glow"
+      className="py-16 text-white bg-gradient-to-br from-primary-700 to-primary-900 shadow-glow relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <div className="container">
+      {/* Éléments décoratifs */}
+      <div className="absolute top-0 left-0 w-full h-full bg-grain"></div>
+      <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-secondary opacity-10 blur-xl"></div>
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-primary-300 opacity-5 blur-xl"></div>
+      
+      {/* Vague en haut du footer */}
+      <div className="absolute -top-10 left-0 w-full overflow-hidden rotate-180">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-white"></path>
+        </svg>
+      </div>
+      
+      <div className="container relative z-10">
+        {/* Section du fondateur */}
+        <motion.div 
+          className="mb-16 pb-16 border-b border-white/10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <div className="perspective-container">
+              <motion.div
+                className="avatar avatar-xl avatar-glow p-1"
+                whileHover={{ rotateY: 10, rotateX: -10 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <div className="gradient-border p-1 rounded-full">
+                  <img 
+                    src={founderPlaceholder} 
+                    alt="Rayen Houaidi - Fondateur & CEO" 
+                    className="w-40 h-40 object-cover rounded-full shadow-xl"
+                  />
+                </div>
+              </motion.div>
+            </div>
+            <div className="text-center md:text-left max-w-lg">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h3 className="text-3xl font-bold mb-1 gradient-text neon-text-secondary">Rayen Houaidi</h3>
+                <p className="text-xl text-secondary-300 mb-4 fancy-text">Fondateur & CEO</p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <div className="glass-strong p-4 rounded-xl mb-4">
+                  <p className="text-gray-200 italic">
+                    "Notre mission est de transformer vos idées en solutions digitales innovantes et performantes. 
+                    Chez HRA DEV, nous combinons expertise technique et créativité pour vous offrir des solutions sur mesure."
+                  </p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center md:justify-start space-x-4"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                {socialLinks.map((link, index) => (
+                  <motion.a
+                    key={index}
+                    href={link.href}
+                    className="flex items-center justify-center w-10 h-10 text-white transition-all rounded-full bg-white/10 hover:bg-secondary hover:text-white hover:shadow-glow-orange"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label={link.name}
+                  >
+                    {link.icon}
+                  </motion.a>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="grid gap-12 md:grid-cols-3">
           {/* Logo et description */}
           <motion.div
@@ -60,7 +146,16 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
           >
             <a href="#" className="inline-block mb-6">
-              <img src={logoHraDev} alt="HRA DEV Logo" className="h-14" />
+              <div className="relative">
+                <img src={logoHraDev} alt="HRA DEV Logo" className="h-14" />
+                <motion.div 
+                  className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary-300 to-secondary rounded-full"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: '100%' }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                />
+              </div>
             </a>
             <p className="mb-6 text-gray-200">
               Transformez vos idées en solutions digitales innovantes avec notre équipe d'experts.
@@ -91,14 +186,18 @@ const Footer = () => {
             <h3 className="mb-6 text-xl font-semibold">Liens rapides</h3>
             <ul className="space-y-3">
               {navLinks.map((link, index) => (
-                <li key={index}>
+                <motion.li 
+                  key={index}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
                   <a 
                     href={link.href} 
-                    className="text-gray-200 transition-all hover:text-secondary hover:translate-x-1 inline-block"
+                    className="text-gray-200 transition-all hover:text-secondary inline-block animated-link"
                   >
                     {link.name}
                   </a>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </motion.div>
@@ -112,18 +211,30 @@ const Footer = () => {
           >
             <h3 className="mb-6 text-xl font-semibold">Contact</h3>
             <ul className="space-y-3">
-              <li className="flex items-center text-gray-200 hover:text-secondary transition-colors">
-                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+              <motion.li 
+                className="flex items-center text-gray-200 hover:text-secondary transition-colors"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <div className="flex items-center justify-center w-8 h-8 mr-3 rounded-full bg-white/10">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
                 hra.deve@gmail.com
-              </li>
-              <li className="flex items-center text-gray-200 hover:text-secondary transition-colors">
-                <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+              </motion.li>
+              <motion.li 
+                className="flex items-center text-gray-200 hover:text-secondary transition-colors"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <div className="flex items-center justify-center w-8 h-8 mr-3 rounded-full bg-white/10">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
                 +216 XX XXX XXX
-              </li>
+              </motion.li>
             </ul>
           </motion.div>
         </div>

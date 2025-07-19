@@ -9,14 +9,37 @@ interface NavbarProps {
 
 const Navbar = ({ scrolled }: NavbarProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeLink, setActiveLink] = useState('hero')
 
   const navLinks = [
-    { name: 'Accueil', href: '#hero' },
-    { name: 'À propos', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Accueil', href: '#hero', id: 'hero' },
+    { name: 'À propos', href: '#about', id: 'about' },
+    { name: 'Services', href: '#services', id: 'services' },
+    { name: 'Portfolio', href: '#portfolio', id: 'portfolio' },
+    { name: 'Contact', href: '#contact', id: 'contact' },
   ]
+
+  // Détecter la section active lors du défilement
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navLinks.map(link => document.getElementById(link.id))
+      const scrollPosition = window.scrollY + 100
+
+      sections.forEach(section => {
+        if (!section) return
+        
+        const sectionTop = section.offsetTop
+        const sectionHeight = section.offsetHeight
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          setActiveLink(section.id)
+        }
+      })
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Fermer le menu mobile lors du changement de section
   const handleLinkClick = () => {
@@ -37,21 +60,33 @@ const Navbar = ({ scrolled }: NavbarProps) => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-sm ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? 'bg-white/95 shadow-lg py-2' 
+          ? 'bg-white/95 shadow-lg py-2 backdrop-blur-md' 
           : 'bg-transparent py-4'
       }`}
     >
       <div className="container flex items-center justify-between">
         <motion.a 
           href="#" 
-          className="text-2xl font-bold"
+          className="text-2xl font-bold relative z-10"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <img src={logoHraDev} alt="HRA DEV Logo" className="h-12" />
+          <div className="relative">
+            <img src={logoHraDev} alt="HRA DEV Logo" className="h-12" />
+            {scrolled && (
+              <motion.div 
+                className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full"
+                initial={{ width: 0 }}
+                animate={{ width: '100%' }}
+                transition={{ duration: 0.8 }}
+              />
+            )}
+          </div>
         </motion.a>
 
         {/* Desktop Navigation */}
@@ -70,9 +105,15 @@ const Navbar = ({ scrolled }: NavbarProps) => {
                     scrolled 
                       ? 'text-gray-800 hover:text-primary' 
                       : 'text-white hover:text-gray-200'
-                  } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full`}
+                  } ${activeLink === link.id ? 'text-primary font-semibold' : ''}`}
                 >
                   {link.name}
+                  <motion.span 
+                    className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full`}
+                    initial={{ width: 0 }}
+                    animate={{ width: activeLink === link.id ? '100%' : '0%' }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </a>
               </motion.li>
             ))}
@@ -100,7 +141,7 @@ const Navbar = ({ scrolled }: NavbarProps) => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div 
-            className="md:hidden fixed inset-0 top-16 bg-white z-40"
+            className="md:hidden fixed inset-0 top-16 bg-white/95 backdrop-blur-md z-40"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
@@ -117,10 +158,24 @@ const Navbar = ({ scrolled }: NavbarProps) => {
                   >
                     <a
                       href={link.href}
-                      className="block text-xl font-medium text-gray-800 hover:text-primary transition-colors"
+                      className={`block text-xl font-medium transition-colors ${
+                        activeLink === link.id 
+                          ? 'text-primary font-semibold' 
+                          : 'text-gray-800 hover:text-primary'
+                      }`}
                       onClick={handleLinkClick}
                     >
-                      {link.name}
+                      <div className="flex items-center">
+                        <span>{link.name}</span>
+                        {activeLink === link.id && (
+                          <motion.span 
+                            className="ml-2 w-2 h-2 rounded-full bg-secondary"
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        )}
+                      </div>
                     </a>
                   </motion.li>
                 ))}
