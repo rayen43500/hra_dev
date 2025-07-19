@@ -143,8 +143,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="gradient-text neon-text">HRA DEV</span> – <br className="md:hidden" />
-            <span className="marker-highlight">Innovative Digital Solutions</span>
+            <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-secondary-300 bg-clip-text text-transparent neon-text-secondary">HRA DEV</span> 
+            <span className="mx-2 text-white">–</span> 
+            <br className="md:hidden" />
+            <span className="bg-gradient-to-r from-primary-100 via-white to-primary-100 bg-clip-text text-transparent">Innovative</span>
+            <span className="mx-1 text-white">Digital</span>
+            <span className="bg-gradient-to-r from-primary-100 via-white to-primary-100 bg-clip-text text-transparent">Solutions</span>
           </motion.h1>
           
           <motion.div
