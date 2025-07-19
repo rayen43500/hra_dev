@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import logoHraDev from '../assets/images/logo.png'
-import founderPlaceholder from '../assets/images/founder-placeholder.png'
+import founderPlaceholder from '../assets/images/founder-placeholder.jpg'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -95,8 +95,23 @@ const Footer = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <h3 className="text-3xl font-bold mb-1 gradient-text neon-text-secondary">Rayen Houaidi</h3>
-                <p className="text-xl text-secondary-300 mb-4 fancy-text">Fondateur & CEO</p>
+                <div className="relative mb-2">
+                  <h3 className="text-4xl font-extrabold mb-1 text-white tracking-wide fancy-text">
+                    <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-secondary-300 bg-clip-text text-transparent drop-shadow-lg">
+                      RAYEN HOUAIDI
+                    </span>
+                  </h3>
+                  <motion.div 
+                    className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-secondary-500 to-secondary-300 rounded-full md:w-3/4 w-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '100%' }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                  />
+                </div>
+                <p className="text-xl text-secondary-300 mb-4 fancy-text tracking-wider font-semibold">
+                  Fondateur & CEO
+                </p>
               </motion.div>
               
               <motion.div
@@ -107,8 +122,7 @@ const Footer = () => {
               >
                 <div className="glass-strong p-4 rounded-xl mb-4">
                   <p className="text-gray-200 italic">
-                    "Notre mission est de transformer vos idées en solutions digitales innovantes et performantes. 
-                    Chez HRA DEV, nous combinons expertise technique et créativité pour vous offrir des solutions sur mesure."
+                    " Our mission is to transform your ideas into innovative and high-performing digital solutions. At HRA DEV, we combine technical expertise and creativity to deliver tailor-made solutions."
                   </p>
                 </div>
               </motion.div>
@@ -233,7 +247,7 @@ const Footer = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                +216 XX XXX XXX
+                +216 29833609
               </motion.li>
             </ul>
           </motion.div>

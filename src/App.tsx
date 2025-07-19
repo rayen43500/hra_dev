@@ -7,7 +7,6 @@ import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
-import CustomCursor from './components/CustomCursor'
 import { useScrollAnimation, useParallaxEffect } from './utils/animations'
 import { AnimatePresence, motion } from 'framer-motion'
 
@@ -46,9 +45,6 @@ function App() {
 
   return (
     <>
-      {/* Curseur personnalisé */}
-      <CustomCursor />
-      
       <AnimatePresence>
         {isLoading ? (
           <motion.div 
