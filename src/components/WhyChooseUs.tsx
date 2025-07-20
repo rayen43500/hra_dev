@@ -135,20 +135,7 @@ const WhyChooseUs = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              <div className="p-6 border border-primary-100 rounded-xl bg-primary-50">
-                <p className="font-medium text-primary-800">
-                  "Notre mission est de vous aider à réussir votre transformation digitale en créant des solutions sur mesure qui répondent parfaitement à vos besoins et objectifs."
-                </p>
-                <div className="mt-4 flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-primary-200 flex items-center justify-center text-primary-700 font-bold">
-                    RH
-                  </div>
-                  <div className="ml-3">
-                    <p className="font-medium">Rayen Houaidi</p>
-                    <p className="text-sm text-gray-600">Fondateur & CEO</p>
-                  </div>
-                </div>
-              </div>
+              
             </motion.div>
           </motion.div>
         </div>
