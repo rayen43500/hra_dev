@@ -63,21 +63,49 @@ const Footer = () => {
 
   return (
     <motion.footer 
-      className="py-16 text-white bg-gradient-to-br from-primary-700 to-primary-900 shadow-glow relative overflow-hidden"
+      className="py-16 text-white relative overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
+      {/* Nouveau fond avec dégradé spectaculaire */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,80,255,0.3)_0%,rgba(0,0,0,0)_60%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(249,115,22,0.25)_0%,rgba(0,0,0,0)_60%)]"></div>
+      
+      {/* Particules brillantes */}
+      <div className="stars absolute inset-0 overflow-hidden">
+        {Array.from({ length: 20 }).map((_, i) => (
+          <div 
+            key={i} 
+            className="star absolute rounded-full bg-white"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              width: `${Math.random() * 3 + 1}px`,
+              height: `${Math.random() * 3 + 1}px`,
+              opacity: Math.random() * 0.8,
+              animation: `twinkle ${Math.random() * 5 + 5}s infinite ${Math.random() * 5}s`
+            }}
+          ></div>
+        ))}
+      </div>
+      
       {/* Éléments décoratifs */}
-      <div className="absolute top-0 left-0 w-full h-full bg-grain"></div>
-      <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-secondary opacity-10 blur-xl"></div>
-      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-primary-300 opacity-5 blur-xl"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-grain opacity-20"></div>
+      <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-secondary opacity-20 blur-xl"></div>
+      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-primary-300 opacity-10 blur-xl"></div>
+      
+      {/* Formes géométriques */}
+      <div className="absolute top-20 left-20 w-16 h-16 border-2 border-white/10 rounded-lg rotate-12 opacity-30"></div>
+      <div className="absolute bottom-40 right-20 w-20 h-20 border-2 border-white/10 rounded-full opacity-30"></div>
+      <div className="absolute top-40 right-1/4 w-12 h-12 border-2 border-secondary/20 rotate-45 opacity-30"></div>
       
       {/* Vague en haut du footer */}
       <div className="absolute -top-10 left-0 w-full overflow-hidden rotate-180">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-white"></path>
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-white/5"></path>
         </svg>
       </div>
       
@@ -98,11 +126,14 @@ const Footer = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <div className="gradient-border p-1 rounded-full">
-                  <img 
-                    src={ceoImage} 
-                    alt="Rayen Houaidi - Fondateur & CEO" 
-                    className="w-40 h-40 object-cover rounded-full shadow-xl"
-                  />
+                  <div className="relative">
+                    <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-secondary-400 to-primary-400 opacity-70 blur-sm animate-pulse-glow"></div>
+                    <img 
+                      src={ceoImage} 
+                      alt="Rayen Houaidi - Fondateur & CEO" 
+                      className="relative w-40 h-40 object-cover rounded-full shadow-xl"
+                    />
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -115,7 +146,7 @@ const Footer = () => {
               >
                 <div className="relative mb-2">
                   <h3 className="text-4xl font-extrabold mb-1 text-white tracking-wide fancy-text">
-                    <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-secondary-300 bg-clip-text text-transparent drop-shadow-lg">
+                    <span className="bg-gradient-to-r from-secondary-300 via-white to-secondary-300 bg-clip-text text-transparent drop-shadow-lg">
                       RAYEN HOUAIDI
                     </span>
                   </h3>
@@ -138,7 +169,7 @@ const Footer = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <div className="glass-strong p-4 rounded-xl mb-4">
+                <div className="glass-strong p-4 rounded-xl mb-4 backdrop-blur-md border border-white/10 shadow-glow-sm">
                   <p className="text-gray-200 italic">
                     " Our mission is to transform your ideas into innovative and high-performing digital solutions. 
                     At HRA DEV, we combine technical expertise and creativity to deliver tailor-made solutions."
