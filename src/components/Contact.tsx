@@ -57,14 +57,14 @@ const Contact = () => {
                       <div className="flex items-center justify-center w-10 h-10 mr-3 rounded-full bg-primary bg-opacity-10">
                         <EnvelopeIcon className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-gray-700">📧 hra.dev@gmail.com</span>
+                      <span className="text-gray-700">📧 hra.deve@gmail.com</span>
                     </div>
                     
                     <div className="flex items-center">
                       <div className="flex items-center justify-center w-10 h-10 mr-3 rounded-full bg-primary bg-opacity-10">
                         <PhoneIcon className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-gray-700">📱 WhatsApp : +216 XX XXX XXX</span>
+                      <span className="text-gray-700">📱 WhatsApp : +216 29 833 609</span>
                     </div>
                   </div>
                 </div>
