@@ -70,17 +70,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="section py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white relative overflow-hidden">
-      {/* Éléments décoratifs */}
-      <div className="absolute top-0 left-0 w-full h-full bg-grid opacity-10"></div>
-      <div className="absolute top-0 left-0 w-full h-full bg-grain opacity-30"></div>
-      <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-secondary opacity-10 blur-xl"></div>
-      <div className="absolute bottom-20 left-20 w-80 h-80 rounded-full bg-primary-300 opacity-5 blur-xl"></div>
-      
-      {/* Quotes décoratifs */}
-      <div className="absolute top-10 left-10 text-9xl text-white opacity-5 font-serif">"</div>
-      <div className="absolute bottom-10 right-10 text-9xl text-white opacity-5 font-serif">"</div>
-      
+    <section id="testimonials" className="section py-20 bg-primary-500 text-white relative overflow-hidden">
       <div className="container relative z-10">
         <motion.div
           className="section-title-container"

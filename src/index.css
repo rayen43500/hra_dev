@@ -5,17 +5,17 @@
 /* Variables globales */
 :root {
   /* Couleurs principales */
-  --primary-50: #eef2ff;
-  --primary-100: #e0e7ff;
-  --primary-200: #c7d2fe;
-  --primary-300: #a5b4fc;
-  --primary-400: #818cf8;
-  --primary-500: #6366f1;
-  --primary-600: #4f46e5;
-  --primary-700: #4338ca;
-  --primary-800: #3730a3;
-  --primary-900: #312e81;
-  --primary-950: #1e1b4b;
+  --primary-50: #f3eeff;
+  --primary-100: #e4d9ff;
+  --primary-200: #c7b3ff;
+  --primary-300: #a98dff;
+  --primary-400: #8b66ff;
+  --primary-500: #6C2BD9;
+  --primary-600: #5a24b5;
+  --primary-700: #4a148c;
+  --primary-800: #3a1078;
+  --primary-900: #2a0c64;
+  --primary-950: #1e084a;
   
   /* Couleurs secondaires */
   --secondary-50: #fff7ed;
@@ -352,8 +352,8 @@
   height: 60%;
   background-color: var(--primary-500);
   border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
-  filter: blur(60px);
-  mix-blend-mode: overlay;
+  filter: blur(80px);
+  mix-blend-mode: soft-light;
 }
 
 .aurora__item:nth-of-type(1) {
@@ -363,7 +363,7 @@
 }
 
 .aurora__item:nth-of-type(2) {
-  background-color: var(--secondary-500);
+  background-color: var(--secondary-600);
   right: -10%;
   top: 0;
   animation: aurora-border 6s ease-in-out 1s infinite,
@@ -371,7 +371,7 @@
 }
 
 .aurora__item:nth-of-type(3) {
-  background-color: var(--primary-300);
+  background-color: var(--primary-400);
   left: -20%;
   bottom: -30%;
   animation: aurora-border 6s ease-in-out 2s infinite,

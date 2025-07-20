@@ -69,38 +69,8 @@ const Footer = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      {/* Nouveau fond avec dégradé spectaculaire */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,80,255,0.3)_0%,rgba(0,0,0,0)_60%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(249,115,22,0.25)_0%,rgba(0,0,0,0)_60%)]"></div>
-      
-      {/* Particules brillantes */}
-      <div className="stars absolute inset-0 overflow-hidden">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <div 
-            key={i} 
-            className="star absolute rounded-full bg-white"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              width: `${Math.random() * 3 + 1}px`,
-              height: `${Math.random() * 3 + 1}px`,
-              opacity: Math.random() * 0.8,
-              animation: `twinkle ${Math.random() * 5 + 5}s infinite ${Math.random() * 5}s`
-            }}
-          ></div>
-        ))}
-      </div>
-      
-      {/* Éléments décoratifs */}
-      <div className="absolute top-0 left-0 w-full h-full bg-grain opacity-20"></div>
-      <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-secondary opacity-20 blur-xl"></div>
-      <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-primary-300 opacity-10 blur-xl"></div>
-      
-      {/* Formes géométriques */}
-      <div className="absolute top-20 left-20 w-16 h-16 border-2 border-white/10 rounded-lg rotate-12 opacity-30"></div>
-      <div className="absolute bottom-40 right-20 w-20 h-20 border-2 border-white/10 rounded-full opacity-30"></div>
-      <div className="absolute top-40 right-1/4 w-12 h-12 border-2 border-secondary/20 rotate-45 opacity-30"></div>
+      {/* Fond mauve simple et uni */}
+      <div className="absolute inset-0 bg-primary-500"></div>
       
       {/* Vague en haut du footer */}
       <div className="absolute -top-10 left-0 w-full overflow-hidden rotate-180">
