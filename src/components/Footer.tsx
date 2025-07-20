@@ -69,7 +69,7 @@ const Footer = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      {/* Fond mauve simple et uni */}
+      {/* Fond noir simple et uni */}
       <div className="absolute inset-0 bg-primary-500"></div>
       
       {/* Vague en haut du footer */}
@@ -116,7 +116,7 @@ const Footer = () => {
               >
                 <div className="relative mb-2">
                   <h3 className="text-4xl font-extrabold mb-1 text-white tracking-wide fancy-text">
-                    <span className="bg-gradient-to-r from-secondary-300 via-white to-secondary-300 bg-clip-text text-transparent drop-shadow-lg">
+                    <span className="bg-gradient-to-r from-secondary-400 via-secondary-500 to-secondary-400 bg-clip-text text-transparent drop-shadow-lg">
                       RAYEN HOUAIDI
                     </span>
                   </h3>
@@ -128,7 +128,7 @@ const Footer = () => {
                     transition={{ duration: 0.8, delay: 0.4 }}
                   />
                 </div>
-                <p className="text-xl text-secondary-300 mb-4 fancy-text tracking-wider font-semibold">
+                <p className="text-xl text-secondary-400 mb-4 fancy-text tracking-wider font-semibold">
                   Fondateur & CEO
                 </p>
               </motion.div>

@@ -62,7 +62,7 @@ const Hero = () => {
       id="hero"
       className="relative flex items-center justify-center min-h-screen text-white overflow-hidden"
     >
-      {/* Fond mauve simple et uni */}
+      {/* Fond noir simple et uni */}
       <div className="absolute inset-0 bg-primary-500"></div>
       
       <div className="container relative z-10 text-center px-4">
@@ -87,12 +87,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-secondary-300 bg-clip-text text-transparent neon-text-secondary">HRA DEV</span> 
+            <span className="bg-gradient-to-r from-secondary-400 via-secondary-500 to-secondary-400 bg-clip-text text-transparent neon-text-secondary">HRA DEV</span> 
             <span className="mx-2 text-white">–</span> 
             <br className="md:hidden" />
-            <span className="bg-gradient-to-r from-primary-100 via-white to-primary-100 bg-clip-text text-transparent">Transformez vos idées</span>
+            <span className="bg-gradient-to-r from-gray-100 via-white to-gray-100 bg-clip-text text-transparent">Transformez vos idées</span>
             <br />
-            <span className="bg-gradient-to-r from-primary-100 via-white to-primary-100 bg-clip-text text-transparent">en solutions digitales</span>
+            <span className="bg-gradient-to-r from-gray-100 via-white to-gray-100 bg-clip-text text-transparent">en solutions digitales</span>
           </motion.h1>
           
           <motion.p
