@@ -63,11 +63,36 @@ const Hero = () => {
       className="relative flex items-center justify-center min-h-screen text-white overflow-hidden"
     >
       {/* Fond avec gradient amélioré */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950"></div>
+      
+      {/* Effet d'aurore boréale */}
+      <div className="aurora">
+        <div className="aurora__item"></div>
+        <div className="aurora__item"></div>
+        <div className="aurora__item"></div>
+      </div>
+      
+      {/* Étoiles scintillantes */}
+      <div className="stars absolute inset-0 overflow-hidden">
+        {Array.from({ length: 50 }).map((_, i) => (
+          <div 
+            key={i} 
+            className="star absolute rounded-full bg-white"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              width: `${Math.random() * 3 + 1}px`,
+              height: `${Math.random() * 3 + 1}px`,
+              opacity: Math.random() * 0.8,
+              animation: `twinkle ${Math.random() * 5 + 5}s infinite ${Math.random() * 5}s`
+            }}
+          ></div>
+        ))}
+      </div>
       
       {/* Motifs de fond animés */}
       <div className="absolute inset-0 opacity-10 bg-pattern"></div>
-      <div className="absolute inset-0 bg-grain"></div>
+      <div className="absolute inset-0 bg-grain opacity-30"></div>
       
       {/* Cercles décoratifs */}
       <motion.div 
