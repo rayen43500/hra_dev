@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import { useParallaxEffect } from '../utils/animations'
 import { useEffect } from 'react'
 
@@ -174,7 +173,7 @@ const Hero = () => {
               { name: 'Mobile', delay: 0.2 },
               { name: 'Backend', delay: 0.3 },
               { name: 'IA', delay: 0.4 }
-            ].map((tech, index) => (
+            ].map((tech) => (
               <motion.div
                 key={tech.name}
                 className="group relative"
