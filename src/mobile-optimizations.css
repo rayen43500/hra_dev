@@ -1,0 +1,502 @@
+/* Optimisations spécifiques pour mobile */
+
+/* Prévention du zoom sur les inputs iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+/* Optimisations pour les écrans tactiles */
+@media (hover: none) and (pointer: coarse) {
+  /* Désactiver les effets hover sur mobile */
+  .btn:hover,
+  .card-hover:hover,
+  .animated-link:hover,
+  .glass:hover {
+    transform: none !important;
+    box-shadow: inherit !important;
+  }
+  
+  /* Améliorer la zone de clic pour les éléments interactifs */
+  .btn,
+  .animated-link,
+  button,
+  a[href],
+  .mobile-optimized {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+  
+  /* Optimiser les transitions pour mobile */
+  * {
+    transition-duration: 0.2s !important;
+  }
+}
+
+/* Optimisations pour les petits écrans */
+@media (max-width: 640px) {
+  /* Améliorer la lisibilité */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  /* Optimiser les conteneurs */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Améliorer l'espacement */
+  .section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  /* Optimiser les titres */
+  .section-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  /* Améliorer les boutons */
+  .btn {
+    min-height: 48px;
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  
+  /* Optimiser les grilles */
+  .grid {
+    gap: 1rem;
+  }
+  
+  /* Améliorer les cartes */
+  .card {
+    padding: 1.5rem;
+  }
+  
+  /* Optimiser les images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Améliorer la navigation */
+  .mobile-nav {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  /* Optimiser les modales et overlays */
+  .modal,
+  .overlay {
+    padding: 1rem;
+  }
+}
+
+/* Optimisations pour les écrans moyens */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Améliorer l'espacement */
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  /* Optimiser les grilles */
+  .grid {
+    gap: 1.5rem;
+  }
+  
+  /* Améliorer les cartes */
+  .card {
+    padding: 2rem;
+  }
+}
+
+/* Support pour les appareils avec notch */
+@supports (padding: max(0px)) {
+  .safe-area-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .safe-area-left {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+  
+  .safe-area-right {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+  
+  .mobile-safe-area {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Optimisations pour l'orientation paysage sur mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Réduire la hauteur minimale */
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  
+  /* Optimiser l'espacement vertical */
+  .section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  /* Réduire la taille des titres */
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  /* Optimiser les boutons */
+  .btn {
+    min-height: 40px;
+    padding: 8px 20px;
+  }
+}
+
+/* Optimisations pour les écrans haute densité */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Améliorer la netteté des images */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Optimisations pour les appareils avec support de préférences de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimisations pour les appareils avec support de contraste élevé */
+@media (prefers-contrast: high) {
+  /* Améliorer la visibilité des bordures */
+  .btn,
+  .card,
+  .glass {
+    border-width: 2px;
+    border-style: solid;
+  }
+  
+  /* Améliorer la visibilité du texte */
+  .text-gray-600 {
+    color: #000 !important;
+  }
+  
+  .text-gray-400 {
+    color: #333 !important;
+  }
+}
+
+/* Optimisations pour les appareils avec support de mode sombre */
+@media (prefers-color-scheme: dark) {
+  /* Ajuster automatiquement les couleurs si nécessaire */
+  .auto-dark {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+}
+
+/* Classes utilitaires pour mobile */
+.mobile-optimized {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.mobile-text {
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+.mobile-spacing {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.mobile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .mobile-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Optimisations pour les performances */
+.mobile-performant {
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimisations pour l'accessibilité mobile */
+.mobile-accessible {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optimisations pour les formulaires mobiles */
+.mobile-form {
+  font-size: 16px;
+}
+
+.mobile-form input,
+.mobile-form textarea,
+.mobile-form select {
+  font-size: 16px !important;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.mobile-form input:focus,
+.mobile-form textarea:focus,
+.mobile-form select:focus {
+  outline: none;
+  border-color: #ff7a00;
+  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
+}
+
+/* Optimisations pour les images responsives */
+.mobile-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optimisations pour les vidéos responsives */
+.mobile-video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Optimisations pour les iframes responsives */
+.mobile-iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+/* Optimisations pour les tableaux responsifs */
+.mobile-table {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-table table {
+  min-width: 600px;
+}
+
+/* Optimisations pour les listes mobiles */
+.mobile-list {
+  padding-left: 1.5rem;
+}
+
+.mobile-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Optimisations pour les citations mobiles */
+.mobile-quote {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-left: 4px solid #ff7a00;
+  background-color: rgba(255, 122, 0, 0.05);
+  font-style: italic;
+}
+
+/* Optimisations pour les codes mobiles */
+.mobile-code {
+  font-family: 'Courier New', monospace;
+  background-color: #f5f5f5;
+  padding: 0.5rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimisations pour les liens mobiles */
+.mobile-link {
+  color: #ff7a00;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.2s ease;
+}
+
+.mobile-link:hover {
+  border-bottom-color: #ff7a00;
+}
+
+/* Optimisations pour les boutons mobiles */
+.mobile-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff7a00;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-button:hover {
+  background-color: #e66a00;
+  transform: translateY(-1px);
+}
+
+.mobile-button:active {
+  transform: translateY(0);
+}
+
+/* Optimisations pour les cartes mobiles */
+.mobile-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* Optimisations pour les modales mobiles */
+.mobile-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.mobile-modal-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimisations pour les tooltips mobiles */
+.mobile-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.mobile-tooltip .tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.mobile-tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+
+/* Optimisations pour les notifications mobiles */
+.mobile-notification {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #ff7a00;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-width: 300px;
+}
+
+/* Optimisations pour les loaders mobiles */
+.mobile-loader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 122, 0, 0.3);
+  border-radius: 50%;
+  border-top-color: #ff7a00;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Optimisations pour les skeletons mobiles */
+.mobile-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+} 
