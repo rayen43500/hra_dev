@@ -88,71 +88,150 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            <div className="perspective-container">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
+            {/* Section Image avec amélioration du design */}
+            <motion.div 
+              className="relative group"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              {/* Fond décoratif animé */}
+              <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-secondary-400/20 via-primary-400/20 to-secondary-600/20 blur-xl animate-pulse"></div>
+              
+              {/* Cercles décoratifs */}
+              <div className="absolute -inset-4 rounded-full border border-secondary-400/30 animate-spin-slow"></div>
+              <div className="absolute -inset-6 rounded-full border border-primary-400/20 animate-spin-reverse"></div>
+              
+              {/* Container principal de l'image */}
               <motion.div
-                className="avatar avatar-xl avatar-glow p-1"
-                whileHover={{ rotateY: 10, rotateX: -10 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72"
+                whileHover={{ 
+                  scale: 1.05,
+                  rotateY: 5,
+                  rotateX: -5,
+                }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 200, 
+                  damping: 20 
+                }}
               >
-                <div className="gradient-border p-1 rounded-full">
-                  <div className="relative">
-                    <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-secondary-400 to-primary-400 opacity-70 blur-sm animate-pulse-glow"></div>
-                    <img 
-                      src={ceoImage} 
-                      alt="Rayen Houaidi - Fondateur & CEO" 
-                      className="relative w-40 h-40 object-cover rounded-full shadow-xl"
-                    />
+                {/* Bordure extérieure avec gradient */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-secondary-500 via-primary-500 to-secondary-600 p-1 shadow-2xl">
+                  {/* Bordure intérieure */}
+                  <div className="relative w-full h-full rounded-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-2">
+                    {/* Image avec overlay */}
+                    <div className="relative w-full h-full rounded-full overflow-hidden group-hover:shadow-glow-lg transition-all duration-500">
+                      <img 
+                        src={ceoImage} 
+                        alt="Rayen Houaidi - Fondateur & CEO" 
+                        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                      />
+                      {/* Overlay au hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary-900/30 via-transparent to-secondary-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      
+                      {/* Badge flottant */}
+                      <motion.div 
+                        className="absolute -bottom-2 -right-2 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg border-2 border-white/20"
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 1 }}
+                      >
+                        CEO & Founder
+                      </motion.div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Particules décoratives */}
+                <div className="absolute -top-2 -left-2 w-3 h-3 bg-secondary-400 rounded-full animate-ping"></div>
+                <div className="absolute -bottom-4 -right-4 w-2 h-2 bg-primary-400 rounded-full animate-pulse"></div>
+                <div className="absolute -top-4 -right-2 w-2 h-2 bg-secondary-300 rounded-full animate-bounce"></div>
+              </motion.div>
+            </motion.div>
+
+            {/* Section Contenu avec amélioration de la mise en page */}
+            <div className="flex-1 text-center lg:text-left max-w-2xl">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                {/* Nom et titre */}
+                <div className="relative mb-6">
+                  <motion.h3 
+                    className="text-4xl md:text-5xl lg:text-6xl font-black mb-2 leading-tight"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
+                    <span className="bg-gradient-to-r from-secondary-300 via-secondary-400 to-primary-400 bg-clip-text text-transparent drop-shadow-2xl">
+                      RAYEN
+                    </span>
+                    <br />
+                    <span className="bg-gradient-to-r from-primary-400 via-secondary-500 to-secondary-400 bg-clip-text text-transparent">
+                      HOUAIDI
+                    </span>
+                  </motion.h3>
+                  
+                  {/* Ligne décorative animée */}
+                  <motion.div 
+                    className="absolute -bottom-2 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 h-1 bg-gradient-to-r from-secondary-500 via-primary-500 to-secondary-400 rounded-full shadow-glow-sm"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '180px' }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.6 }}
+                  />
+                </div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  <p className="text-2xl md:text-3xl text-secondary-400 mb-8 font-light tracking-wide">
+                    Fondateur & CEO
+                  </p>
+                </motion.div>
+              </motion.div>
+              
+              {/* Citation avec nouveau design */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <div className="relative mb-8 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-md border border-white/20 shadow-2xl">
+                  {/* Guillemets décoratifs */}
+                  <div className="absolute -top-4 -left-2 text-6xl text-secondary-400/30 font-serif">"</div>
+                  <div className="absolute -bottom-8 -right-2 text-6xl text-secondary-400/30 font-serif transform rotate-180">"</div>
+                  
+                  <p className="text-gray-100 text-lg md:text-xl leading-relaxed italic relative z-10">
+                    Notre mission est de transformer vos idées en solutions digitales innovantes et performantes. 
+                    Chez HRA DEV, nous combinons expertise technique et créativité pour livrer des solutions sur mesure.
+                  </p>
+                  
+                  {/* Signature */}
+                  <div className="mt-6 pt-4 border-t border-white/10">
+                    <p className="text-secondary-400 font-semibold">— Rayen Houaidi</p>
                   </div>
                 </div>
               </motion.div>
-            </div>
-            <div className="text-center md:text-left max-w-lg">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <div className="relative mb-2">
-                  <h3 className="text-4xl font-extrabold mb-1 text-white tracking-wide fancy-text">
-                    <span className="bg-gradient-to-r from-secondary-400 via-secondary-500 to-secondary-400 bg-clip-text text-transparent drop-shadow-lg">
-                      RAYEN HOUAIDI
-                    </span>
-                  </h3>
-                  <motion.div 
-                    className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-secondary-500 to-secondary-300 rounded-full md:w-3/4 w-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: '100%' }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                  />
-                </div>
-                <p className="text-xl text-secondary-400 mb-4 fancy-text tracking-wider font-semibold">
-                  Fondateur & CEO
-                </p>
-              </motion.div>
               
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <div className="glass-strong p-4 rounded-xl mb-4 backdrop-blur-md border border-white/10 shadow-glow-sm">
-                  <p className="text-gray-200 italic">
-                    " Our mission is to transform your ideas into innovative and high-performing digital solutions. 
-                    At HRA DEV, we combine technical expertise and creativity to deliver tailor-made solutions."
-                  </p>
-                </div>
-              </motion.div>
-              
+              {/* Réseaux sociaux avec animation */}
               <motion.div 
-                className="flex justify-center md:justify-start space-x-4"
-                initial={{ opacity: 0, y: 10 }}
+                className="flex justify-center lg:justify-start space-x-4"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
               >
                 {socialLinks.map((link, index) => (
                   <motion.a
@@ -160,12 +239,27 @@ const Footer = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-10 h-10 text-white transition-all rounded-full bg-white/10 hover:bg-secondary hover:text-white hover:shadow-glow-orange"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="group relative flex items-center justify-center w-12 h-12 text-white/80 transition-all rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 hover:border-secondary-400/50 hover:text-white shadow-lg"
+                    whileHover={{ 
+                      scale: 1.1, 
+                      y: -2,
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.3)"
+                    }}
                     whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                     aria-label={link.name}
                   >
-                    {link.icon}
+                    {/* Effet de lueur au hover */}
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-secondary-500/20 to-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                    <span className="relative z-10">{link.icon}</span>
+                    
+                    {/* Tooltip */}
+                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                      {link.name}
+                    </div>
                   </motion.a>
                 ))}
               </motion.div>
@@ -303,4 +397,4 @@ const Footer = () => {
   )
 }
 
-export default Footer 
+export default Footer

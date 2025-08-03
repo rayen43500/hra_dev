@@ -7,35 +7,51 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Sophie Martin',
-      position: 'CEO, TechStart',
-      image: 'https://randomuser.me/api/portraits/women/44.jpg',
+      name: 'Ahmed Ben Salem',
+      position: 'Directeur Général, Tunisie Telecom',
+      image: 'https://randomuser.me/api/portraits/men/44.jpg',
       rating: 5,
-      text: "L'équipe de HRA DEV a transformé notre idée en une application mobile exceptionnelle. Leur expertise technique et leur approche créative ont dépassé nos attentes. Je recommande vivement leurs services à toute entreprise cherchant à innover."
+      text: "HRA DEV a développé notre application mobile de paiement électronique avec une expertise remarquable. Leur équipe a parfaitement compris nos besoins spécifiques au marché tunisien et a livré une solution robuste et sécurisée. Notre satisfaction client a augmenté de 60%."
     },
     {
       id: 2,
-      name: 'Thomas Dubois',
-      position: 'Fondateur, E-Commerce Plus',
-      image: 'https://randomuser.me/api/portraits/men/32.jpg',
+      name: 'Fatma Mansouri',
+      position: 'Fondatrice, E-Commerce Tunisie',
+      image: 'https://randomuser.me/api/portraits/women/32.jpg',
       rating: 5,
-      text: "Nous avons fait appel à HRA DEV pour refondre notre site e-commerce et les résultats sont impressionnants. Notre taux de conversion a augmenté de 40% et l'expérience utilisateur est nettement améliorée. Un partenaire de confiance pour votre transformation digitale."
+      text: "Grâce à HRA DEV, notre plateforme e-commerce a connu un succès fulgurant. Leur connaissance du marché local et leur expertise technique ont permis de créer une expérience utilisateur exceptionnelle. Nos ventes ont doublé en seulement 6 mois."
     },
     {
       id: 3,
-      name: 'Léa Moreau',
-      position: 'Directrice Marketing, InnoGroup',
-      image: 'https://randomuser.me/api/portraits/women/68.jpg',
+      name: 'Mohamed Karray',
+      position: 'CEO, Banque de Tunisie',
+      image: 'https://randomuser.me/api/portraits/men/68.jpg',
       rating: 5,
-      text: "La collaboration avec HRA DEV a été un véritable plaisir. Leur équipe est à l'écoute, réactive et propose des solutions innovantes. Notre application web est maintenant plus rapide, plus sécurisée et parfaitement adaptée à nos besoins spécifiques."
+      text: "La collaboration avec HRA DEV pour notre système bancaire en ligne a été exemplaire. Leur équipe a respecté toutes les normes de sécurité tunisiennes et européennes. Notre plateforme est maintenant plus rapide et plus fiable que jamais."
     },
     {
       id: 4,
-      name: 'Alexandre Petit',
-      position: 'CTO, FinTech Solutions',
-      image: 'https://randomuser.me/api/portraits/men/12.jpg',
+      name: 'Sonia Trabelsi',
+      position: 'Directrice Marketing, Groupe Poulina',
+      image: 'https://randomuser.me/api/portraits/women/12.jpg',
       rating: 5,
-      text: "HRA DEV nous a aidés à développer une architecture backend robuste et évolutive pour notre plateforme financière. Leur expertise en sécurité et en performance a été cruciale pour notre succès. Un partenariat que nous comptons maintenir sur le long terme."
+      text: "HRA DEV a transformé notre présence digitale avec une stratégie complète. De la refonte de notre site web à l'optimisation SEO, ils ont boosté notre visibilité en ligne. Notre trafic web a augmenté de 150% et nos leads qualifiés de 80%."
+    },
+    {
+      id: 5,
+      name: 'Karim Ben Ali',
+      position: 'Fondateur, Startup Tunisie',
+      image: 'https://randomuser.me/api/portraits/men/25.jpg',
+      rating: 5,
+      text: "En tant que startup tunisienne, nous avions besoin d'un partenaire qui comprenne notre écosystème local. HRA DEV a non seulement développé notre MVP mais nous a aussi conseillés sur notre stratégie digitale. Un partenaire de confiance pour l'innovation en Tunisie."
+    },
+    {
+      id: 6,
+      name: 'Amina Ben Youssef',
+      position: 'Directrice IT, Ministère des Finances',
+      image: 'https://randomuser.me/api/portraits/women/45.jpg',
+      rating: 5,
+      text: "HRA DEV a développé notre système de gestion fiscale avec une précision remarquable. Leur expertise en cybersécurité et leur respect des normes gouvernementales ont été déterminants. Le projet a été livré dans les délais et le budget prévus."
     }
   ];
 
