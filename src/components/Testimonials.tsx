@@ -86,7 +86,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="section py-20 bg-primary-500 text-white relative overflow-hidden">
+    <section id="testimonials" className="section py-16 sm:py-20 bg-primary-500 text-white relative overflow-hidden">
       <div className="container relative z-10">
         <motion.div
           className="section-title-container"
@@ -101,7 +101,7 @@ const Testimonials = () => {
           </p>
         </motion.div>
         
-        <div className="mt-16 max-w-5xl mx-auto">
+        <div className="mt-10 sm:mt-16 max-w-5xl mx-auto">
           <div className="relative">
             {/* Contrôles */}
             <div className="absolute -left-12 top-1/2 -translate-y-1/2 z-10 hidden md:block">
@@ -130,9 +130,9 @@ const Testimonials = () => {
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
                 {testimonials.map((testimonial) => (
-                  <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
+                  <div key={testimonial.id} className="w-full flex-shrink-0 px-2 sm:px-4">
                     <motion.div 
-                      className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-glow-sm"
+                      className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 sm:p-8 shadow-glow-sm"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -140,7 +140,7 @@ const Testimonials = () => {
                     >
                       <div className="flex items-center mb-6">
                         <div className="mr-4">
-                          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-secondary">
+                          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-secondary">
                             <img 
                               src={testimonial.image} 
                               alt={testimonial.name}
@@ -149,7 +149,7 @@ const Testimonials = () => {
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-xl font-semibold">{testimonial.name}</h3>
+                          <h3 className="text-lg sm:text-xl font-semibold">{testimonial.name}</h3>
                           <p className="text-gray-300">{testimonial.position}</p>
                           <div className="flex mt-1">
                             {[...Array(testimonial.rating)].map((_, i) => (
@@ -158,7 +158,7 @@ const Testimonials = () => {
                           </div>
                         </div>
                       </div>
-                      <blockquote className="text-gray-200 italic">"{testimonial.text}"</blockquote>
+                      <blockquote className="text-gray-200 italic text-sm sm:text-base leading-relaxed">"{testimonial.text}"</blockquote>
                     </motion.div>
                   </div>
                 ))}

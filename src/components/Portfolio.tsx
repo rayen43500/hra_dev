@@ -227,7 +227,7 @@ const Portfolio = () => {
   const currentProjects = projectsByCategory[activeCategory];
 
   return (
-    <section id="portfolio" className="section py-20 bg-gray-50 relative overflow-hidden">
+    <section id="portfolio" className="section py-16 sm:py-20 bg-gray-50 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-pattern"></div>
       
       <div className="container relative z-10">
@@ -245,12 +245,12 @@ const Portfolio = () => {
         </motion.div>
         
         {/* Catégories */}
-        <div className="flex flex-wrap justify-center mt-10 mb-12 gap-3">
+        <div className="-mx-4 px-4 sm:mx-0 sm:px-0 flex gap-2 sm:gap-3 mt-8 sm:mt-10 mb-8 sm:mb-12 overflow-x-auto sm:overflow-visible sm:flex-wrap sm:justify-center scrollbar-none">
           {categories.map((category) => (
             <motion.button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-4 py-2 rounded-full flex items-center gap-2 transition-all ${
+              className={`shrink-0 px-3 sm:px-4 py-2 rounded-full flex items-center gap-2 transition-all whitespace-nowrap text-sm sm:text-base ${
                 activeCategory === category.id 
                   ? 'bg-secondary-500 text-white shadow-lg' 
                   : 'bg-white text-gray-700 hover:bg-gray-100'
@@ -265,7 +265,7 @@ const Portfolio = () => {
         </div>
         
         <motion.div 
-          className="grid gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-5 sm:gap-6 mt-8 sm:mt-10 md:grid-cols-2 lg:grid-cols-3"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"

@@ -40,12 +40,13 @@ const Contact = () => {
           
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <p className="text-xl font-medium">Need a project? Let's talk!</p>
+              <p className="text-lg sm:text-xl font-medium">Un projet en tête ? Parlons-en.</p>
+              <p className="mt-2 text-gray-600">Réponse rapide sur WhatsApp ou par email.</p>
             </div>
             
-            <div className="grid gap-10 md:grid-cols-2">
+            <div className="grid gap-6 sm:gap-10 md:grid-cols-2">
               {/* Contact Info */}
-              <div>
+              <div className="card rounded-2xl bg-white/95 backdrop-blur-sm">
                 <div className="mb-8">
                   <h3 className="mb-4 text-xl font-semibold">Contactez-nous</h3>
                   <p className="mb-6 text-gray-600">
@@ -54,24 +55,24 @@ const Contact = () => {
                   
                   <div className="space-y-4">
                     <div className="flex items-center">
-                      <div className="flex items-center justify-center w-10 h-10 mr-3 rounded-full bg-primary bg-opacity-10">
+                      <div className="flex items-center justify-center w-10 h-10 mr-3 rounded-2xl bg-primary bg-opacity-10">
                         <EnvelopeIcon className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-gray-700">📧 hra.deve@gmail.com</span>
+                      <span className="text-gray-700 break-all">hra.deve@gmail.com</span>
                     </div>
                     
                     <div className="flex items-center">
-                      <div className="flex items-center justify-center w-10 h-10 mr-3 rounded-full bg-primary bg-opacity-10">
+                      <div className="flex items-center justify-center w-10 h-10 mr-3 rounded-2xl bg-primary bg-opacity-10">
                         <PhoneIcon className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-gray-700">📱 WhatsApp : +216 29 833 609</span>
+                      <span className="text-gray-700">WhatsApp : +216 29 833 609</span>
                     </div>
                   </div>
                 </div>
               </div>
               
               {/* Contact Form */}
-              <div>
+              <div className="card rounded-2xl bg-white/95 backdrop-blur-sm">
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-700">
@@ -83,7 +84,8 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                      autoComplete="name"
+                      className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-secondary-500"
                       required
                     />
                   </div>
@@ -98,7 +100,8 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                      autoComplete="email"
+                      className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-secondary-500"
                       required
                     />
                   </div>
@@ -113,14 +116,14 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={5}
-                      className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                      className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-secondary-500"
                       required
                     ></textarea>
                   </div>
                   
                   <button
                     type="submit"
-                    className="w-full btn btn-primary"
+                    className="w-full btn btn-primary rounded-xl"
                   >
                     Envoyer
                   </button>

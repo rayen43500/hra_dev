@@ -37,11 +37,11 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="section py-20 bg-white relative overflow-hidden">
+    <section id="why-choose-us" className="section py-16 sm:py-20 bg-white relative overflow-hidden">
       {/* Éléments décoratifs */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-pattern"></div>
-      <div className="absolute top-20 right-0 w-96 h-96 rounded-full bg-primary-300 opacity-10 blur-3xl"></div>
-      <div className="absolute -bottom-48 -left-48 w-96 h-96 rounded-full bg-secondary-300 opacity-10 blur-3xl"></div>
+      <div className="absolute top-10 sm:top-20 right-0 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-primary-300 opacity-10 blur-3xl"></div>
+      <div className="absolute -bottom-40 sm:-bottom-48 -left-40 sm:-left-48 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-secondary-300 opacity-10 blur-3xl"></div>
       
       <div className="container relative z-10">
         <div className="section-title-container">
@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
           </motion.h2>
         </div>
         
-        <div className="flex flex-col lg:flex-row gap-16 mt-16">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 mt-10 sm:mt-16">
           {/* Colonne de gauche - Image */}
           <motion.div 
             className="lg:w-1/2 flex items-center justify-center"
@@ -68,14 +68,11 @@ const WhyChooseUs = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl blur-lg opacity-30 animate-pulse"></div>
               <div className="relative bg-white p-6 rounded-xl shadow-xl">
-                <div className="aspect-w-4 aspect-h-3 w-full overflow-hidden rounded-lg">
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
                   <img 
-                    src="/src/assets/images/team-working.jpg" 
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1170&q=80" 
                     alt="Notre équipe au travail" 
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80';
-                    }}
                   />
                 </div>
                 

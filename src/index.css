@@ -53,8 +53,15 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 7.5rem;
+    }
   }
   
   body {
@@ -69,6 +76,13 @@
   
   h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Focus visible clair (clavier) */
+  *:focus-visible {
+    outline: 3px solid rgba(255, 122, 0, 0.55);
+    outline-offset: 3px;
   }
   
   /* Transitions pour le corps au chargement */
@@ -99,14 +113,33 @@
   input, textarea, select {
     font-size: 16px !important;
   }
+
+  /* Fond doux global */
+  main {
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(255, 190, 112, 0.08), transparent 55%),
+      radial-gradient(900px 500px at 90% 20%, rgba(176, 176, 176, 0.07), transparent 55%);
+  }
+
+  /* Médias fluides (évite débordements sur mobile) */
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  img {
+    display: block;
+  }
 }
 
 /* Composants */
 @layer components {
   /* Conteneur */
   .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
     margin-left: auto;
     margin-right: auto;
     max-width: 80rem;
@@ -233,10 +266,14 @@
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
     font-weight: 500;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     transition: all 0.3s ease;
     outline: none;
     touch-action: manipulation;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
   }
   
   .btn:focus {
@@ -297,10 +334,21 @@
   /* Cards */
   .card {
     background-color: white;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(17, 24, 39, 0.06);
     padding: 1.5rem;
     transition: all 0.3s ease;
+  }
+
+  /* Masquer la scrollbar (utile pour les filtres/catégories mobile) */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
   }
   
   .card-hover:hover {

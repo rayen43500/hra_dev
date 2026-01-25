@@ -19,7 +19,7 @@ const Hero = () => {
       if (Math.random() > particleCount) return
       
       const particle = document.createElement('div')
-      particle.className = 'absolute rounded-full pointer-events-none'
+      particle.className = 'hero-particle absolute rounded-full pointer-events-none'
       
       // Position responsive
       const x = Math.random() * heroSection.offsetWidth
@@ -77,7 +77,7 @@ const Hero = () => {
     return () => {
       const heroSection = document.getElementById('hero')
       if (heroSection) {
-        const particles = heroSection.querySelectorAll('.absolute.rounded-full')
+        const particles = heroSection.querySelectorAll('.hero-particle')
         particles.forEach(particle => particle.remove())
       }
     }
@@ -86,7 +86,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center min-h-screen overflow-hidden"
+      className="relative flex items-center justify-center min-h-[100svh] sm:min-h-screen overflow-hidden"
     >
       {/* Fond dégradé responsive */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900"></div>
@@ -201,7 +201,7 @@ const Hero = () => {
             {/* Bouton principal - Découvrir nos services */}
             <motion.a 
               href="#services" 
-              className="group relative overflow-hidden flex items-center justify-center px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white font-bold text-base sm:text-lg lg:text-xl shadow-2xl shadow-secondary-500/40 hover:shadow-secondary-500/60 transition-all duration-500 w-full sm:w-auto min-w-[280px] sm:min-w-[320px]"
+              className="group relative overflow-hidden flex items-center justify-center px-6 xs:px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white font-bold text-base sm:text-lg lg:text-xl shadow-2xl shadow-secondary-500/40 hover:shadow-secondary-500/60 transition-all duration-500 w-full sm:w-auto min-w-0 sm:min-w-[320px]"
               whileHover={{ scale: 1.02, y: -3 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -225,7 +225,7 @@ const Hero = () => {
             {/* Bouton secondaire - Devis gratuit */}
             <motion.a 
               href="#contact" 
-              className="group relative overflow-hidden flex items-center justify-center px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl border-2 border-white/30 hover:border-secondary-400 bg-white/5 hover:bg-secondary-500/10 backdrop-blur-xl text-white hover:text-secondary-300 font-bold text-base sm:text-lg lg:text-xl transition-all duration-500 w-full sm:w-auto min-w-[280px] sm:min-w-[320px]"
+              className="group relative overflow-hidden flex items-center justify-center px-6 xs:px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl border-2 border-white/30 hover:border-secondary-400 bg-white/5 hover:bg-secondary-500/10 backdrop-blur-xl text-white hover:text-secondary-300 font-bold text-base sm:text-lg lg:text-xl transition-all duration-500 w-full sm:w-auto min-w-0 sm:min-w-[320px]"
               whileHover={{ scale: 1.02, y: -3 }}
               whileTap={{ scale: 0.98 }}
             >

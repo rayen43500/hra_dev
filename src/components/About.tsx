@@ -81,7 +81,7 @@ const About = () => {
             </motion.p>
             
             <motion.div
-              className="grid grid-cols-2 gap-6 mt-16 md:grid-cols-4"
+              className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-10 sm:mt-16"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -90,10 +90,10 @@ const About = () => {
               {features.map((feature, index) => (
                 <motion.div 
                   key={index} 
-                  className="p-6 text-center rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                  className="card card-hover p-5 sm:p-6 text-center rounded-2xl bg-white/95 backdrop-blur-sm"
                   variants={itemVariants}
                 >
-                  <div className="flex items-center justify-center w-14 h-14 mx-auto mb-5 rounded-xl bg-primary bg-opacity-10 text-primary">
+                  <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-4 sm:mb-5 rounded-2xl bg-primary bg-opacity-10 text-primary">
                     {feature.icon}
                   </div>
                   <h3 className="mb-2 text-lg font-semibold">{feature.title}</h3>

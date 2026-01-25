@@ -42,7 +42,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="section py-20 bg-gray-50">
+    <section id="services" className="section py-16 sm:py-20 bg-gray-50">
       <div className="container">
         <div className="section-title-container">
           <motion.h2 
@@ -57,7 +57,7 @@ const Services = () => {
         </div>
         
         <motion.p 
-          className="text-center text-gray-600 max-w-3xl mx-auto mb-16"
+          className="text-center text-gray-600 max-w-3xl mx-auto mb-10 sm:mb-16 px-2"
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
@@ -68,7 +68,7 @@ const Services = () => {
         </motion.p>
         
         <motion.div 
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-5 sm:gap-8 md:grid-cols-2 lg:grid-cols-3"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -83,8 +83,8 @@ const Services = () => {
               whileHover={{ y: -10, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)' }}
             >
               <div className={`h-2 w-full rounded-t-2xl bg-gradient-to-r ${service.color}`}></div>
-              <div className="p-6 flex-1 flex flex-col">
-                <div className="bg-gray-50 w-16 h-16 rounded-xl flex items-center justify-center mb-4">
+              <div className="p-5 sm:p-6 flex-1 flex flex-col">
+                <div className="bg-gray-50 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-4">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>
